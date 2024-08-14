@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Memecard from "../component/memeCards";
 import { apicall } from "../api";
 
@@ -23,10 +23,15 @@ const Homepage = () => {
   }
 
   return (
-    <div className="row">
-      {data.map((el) => (
-        <Memecard key={el.id} url={el.url} title={el.name} />
-      ))}
+    <div className="container">
+        <h1>Memes Generator</h1>
+      <div className="row">
+        {data.map((el) => (
+          <div key={el.id} className="col-md-3 d-flex">
+            <Memecard url={el.url} title={el.name} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

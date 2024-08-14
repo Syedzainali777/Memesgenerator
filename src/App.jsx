@@ -1,12 +1,16 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import Homepage from "./Pages/home.jsx";
-import "./App.css";
+import Editpage from "./Pages/editpage.jsx";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <>
       <div className="container">
-        <Homepage />
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/edit/" element={<Editpage />} />
+        </Routes>
       </div>
     </>
   );

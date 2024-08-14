@@ -15,9 +15,8 @@ const Editpage = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container-fluid bg-secondary">
       <div ref={memeRef}>
-        <h1>Edit Page</h1>
         <img src={params.get("url")} alt="Meme" width="400px" />
         {Array(count)
           .fill(0)

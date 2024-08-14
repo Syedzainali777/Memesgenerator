@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Memecard from "../component/memeCards";
 import { apicall } from "../api";
+import './home.css';
 
 const Homepage = () => {
   const [data, setData] = useState([]);
@@ -19,15 +20,22 @@ const Homepage = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>; // Show loading message while data is being fetched
+    return <div className="text-center">Loading...</div>; // Center the loading message
   }
 
   return (
-    <div className="container">
-        <h1>Memes Generator</h1>
+    <div className="container-fluid bg-secondary py-5">
+      <div className="title-head bg-black d-flex align-items-center">
+        <h1 className="text-light text-center bg-black">
+          Memes Generator App
+        </h1>
+      </div>
       <div className="row">
         {data.map((el) => (
-          <div key={el.id} className="col-md-3 d-flex">
+          <div
+            key={el.id}
+            className="col-md-4 col-lg-3 mt-5 mb-4 d-flex justify-content-center"
+          >
             <Memecard url={el.url} title={el.name} />
           </div>
         ))}

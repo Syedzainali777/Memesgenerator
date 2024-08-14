@@ -15,7 +15,9 @@ const Textedit = () => {
             onBlur={() => setEdit(false)} // Exit edit mode when input loses focus
           />
         ) : (
-          <h1 onDoubleClick={() => setEdit(true)}>{val}</h1>
+          <b>
+            <h5 onDoubleClick={() => setEdit(true)}>{val}</h5>
+          </b>
         )}
       </div>
     </Draggable>

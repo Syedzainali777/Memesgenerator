@@ -1,3 +1,50 @@
-.title-head{
-    height: 130px;
+/* Ensures that horizontal overflow is hidden on the body or main container */
+body {
+  overflow-x: hidden;
+}
+
+.container-fluid {
+  padding: 0; /* Adjust padding if needed to prevent overflow */
+}
+
+.title-head {
+  height: 130px;
+  overflow: hidden; /* Prevent any overflow within title-head */
+}
+
+.pagination {
+  font-size: 22px;
+  gap: 20px;
+  color: white;
+  align-items: center;
+}
+
+.pagination-arrow {
+  cursor: pointer;
+  margin: 0 10px;
+  font-size: 20px;
+}
+
+.pagination-arrow.disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination-numbers {
+  display: flex;
+  flex-wrap: wrap; /* Allow page numbers to wrap if needed */
+}
+
+.pagination-number {
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.pagination-number.active {
+  font-weight: bold;
+  color: yellow;
+}
+
+.disabled {
+  display: none;
 }

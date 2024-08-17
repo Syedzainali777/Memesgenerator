@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Draggable from "react-draggable";
+import "./Textofmeme.css"; // Import the CSS file
 
 const Textedit = () => {
   const [edit, setEdit] = useState(false);
@@ -7,7 +8,7 @@ const Textedit = () => {
 
   return (
     <Draggable>
-      <div>
+      <div className="draggable-container">
         {edit ? (
           <input
             value={val}
@@ -15,9 +16,7 @@ const Textedit = () => {
             onBlur={() => setEdit(false)} // Exit edit mode when input loses focus
           />
         ) : (
-          <b>
-            <h5 onDoubleClick={() => setEdit(true)}>{val}</h5>
-          </b>
+          <h4 onDoubleClick={() => setEdit(true)}>{val}</h4>
         )}
       </div>
     </Draggable>

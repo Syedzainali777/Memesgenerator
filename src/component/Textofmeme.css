@@ -1,6 +1,3 @@
-.draggable-container h4{
-    color: #0a58ca;
-}
 /* Style for the input field */
 .draggable-container input {
   color: white;
@@ -14,12 +11,13 @@
 }
 
 /* Style for the text when not in edit mode */
-.draggable-container h5 {
+.draggable-container h4 {
   cursor: pointer;
-  color: #333;
+  color: #be1d1d;
   margin: 0;
   font-size: 18px;
   transition: color 0.3s ease;
+  font-weight: 700;
 }
 
 /* Add hover effect for the text */

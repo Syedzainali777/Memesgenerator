@@ -1,4 +1,41 @@
-.img-size{
-    width: 500px;
-    height: 500px;
+/* General Container Styles */
+.container-fluid {
+  padding: 0 15px; /* Add some padding to avoid content touching the edges */
+}
+
+/* Responsive Image Container */
+.img-size {
+  max-width: 400px; /* Ensure the image container does not exceed the screen width */
+  height: auto; /* Maintain aspect ratio of the image container */
+  position: relative; /* Ensure absolute positioning of child elements if needed */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+/* Responsive Image */
+.img-size img {
+  width: 400px; /* Make sure the image scales with its container */
+  height: auto; /* Maintain the aspect ratio of the image */
+}
+
+/* Button Styles */
+.btn {
+  margin: 0 10px; /* Add margin between buttons */
+  padding: 10px 20px; /* Add padding for better touch target size */
+  font-size: 16px; /* Increase font size for readability */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .img-size img {
+    display: flex;
+  }
+  .img-size img {
+    width: 350px; /* Ensure the container width is 100% on smaller screens */
+    height: auto; /* Adjust height to maintain aspect ratio */
+  }
+
+  .btn {
+    width: 100%; /* Make buttons full-width on small screens for easier interaction */
+    margin-bottom: 10px; /* Add margin-bottom to stack buttons vertically */
+  }
 }

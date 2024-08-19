@@ -7,7 +7,7 @@ import "./editpage.css";
 const Editpage = () => {
   const [params] = useSearchParams();
   const [count, setCount] = useState(0);
-  const [editMode, setEditMode] = useState(false); // New state for edit mode
+  const [editMode, setEditMode] = useState(false);
 
   const memeRef = useRef();
 
@@ -16,7 +16,7 @@ const Editpage = () => {
   };
 
   const toggleEditMode = () => {
-    setEditMode(!editMode); // Toggle edit mode
+    setEditMode(!editMode);
   };
 
   return (
@@ -26,19 +26,30 @@ const Editpage = () => {
         {Array(count)
           .fill(0)
           .map((_, index) => (
-            <Textofmeme key={index} editMode={editMode} /> // Pass editMode as prop
+            <Textofmeme key={index} editMode={editMode} />
           ))}
       </div>
       <div className="d-flex justify-content-center mt-5">
-        <button onClick={addText} className="btn btn-primary">
+        <button
+          onClick={addText}
+          onTouchStart={addText} // Handle touch event
+          className="btn btn-primary"
+        >
           Add Text
         </button>
-        <button onClick={toggleEditMode} className="btn btn-primary">
+        <button
+          onClick={toggleEditMode}
+          onTouchStart={toggleEditMode} // Handle touch event
+          className="btn btn-primary"
+        >
           Edit Text
         </button>
         <button
           onClick={() => {
             exportComponentAsJPEG(memeRef);
+          }}
+          onTouchStart={() => {
+            exportComponentAsJPEG(memeRef); // Handle touch event
           }}
           className="btn btn-success"
         >

@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Draggable from "react-draggable";
-import "./Textofmeme.css"; // Import the CSS file
+import "./Textofmeme.css";
 
-const Textedit = () => {
+const Textofmeme = ({ editMode }) => {
   const [edit, setEdit] = useState(false);
   const [val, setVal] = useState("double click to edit");
+
+  useEffect(() => {
+    setEdit(editMode); // Update edit state when editMode prop changes
+  }, [editMode]);
 
   return (
     <Draggable>
@@ -17,7 +21,7 @@ const Textedit = () => {
           />
         ) : (
           <b>
-            <h4 onDoubleClick={() => setEdit(true)}>{val}</h4>
+            <h4>{val}</h4>
           </b>
         )}
       </div>
@@ -25,4 +29,4 @@ const Textedit = () => {
   );
 };
 
-export default Textedit;
+export default Textofmeme;

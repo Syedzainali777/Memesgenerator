@@ -11,13 +11,13 @@ const Textofmeme = ({ editMode }) => {
   }, [editMode]);
 
   return (
-    <Draggable>
+    <Draggable disabled={editMode ? true : false}>
       <div className="draggable-container">
         {edit ? (
           <input
             value={val}
             onChange={(e) => setVal(e.target.value)}
-            onBlur={() => setEdit(false)} // Exit edit mode when input loses focus
+            onBlur={() => {setEdit(false)}} // Exit edit mode when input loses focus
           />
         ) : (
           <b>

@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import Textofmeme from "../component/Textofmeme.jsx";
 import { exportComponentAsJPEG } from "react-component-export-image";
@@ -18,6 +18,9 @@ const Editpage = () => {
   const toggleEditMode = () => {
     setEditMode(!editMode);
   };
+  useEffect(() => {
+    console.log("editMode:", editMode); // Logs the updated state
+  }, [editMode]);
 
   return (
     <div className="container-fluid bg-secondary">
@@ -30,26 +33,15 @@ const Editpage = () => {
           ))}
       </div>
       <div className="d-flex justify-content-center mt-5">
-        <button
-          onClick={addText}
-          onTouchStart={addText} // Handle touch event
-          className="btn btn-primary"
-        >
+        <button onClick={addText} className="btn btn-primary">
           Add Text
         </button>
-        <button
-          onClick={toggleEditMode}
-          onTouchStart={toggleEditMode} // Handle touch event
-          className="btn btn-primary"
-        >
+        <button onClick={toggleEditMode} className="btn btn-primary">
           Edit Text
         </button>
         <button
           onClick={() => {
             exportComponentAsJPEG(memeRef);
-          }}
-          onTouchStart={() => {
-            exportComponentAsJPEG(memeRef); // Handle touch event
           }}
           className="btn btn-success"
         >

@@ -1,6 +1,7 @@
 /* General Container Styles */
 .container-fluid {
   padding: 0 15px; /* Add some padding to avoid content touching the edges */
+  overflow: hidden;
 }
 
 /* Responsive Image Container */
@@ -22,20 +23,4 @@
   margin: 0 10px; /* Add margin between buttons */
   padding: 10px 20px; /* Add padding for better touch target size */
   font-size: 16px; /* Increase font size for readability */
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .img-size img {
-    display: flex;
-  }
-  .img-size img {
-    width: 350px; /* Ensure the container width is 100% on smaller screens */
-    height: auto; /* Adjust height to maintain aspect ratio */
-  }
-
-  .btn {
-    width: 100%; /* Make buttons full-width on small screens for easier interaction */
-    margin-bottom: 10px; /* Add margin-bottom to stack buttons vertically */
-  }
 }

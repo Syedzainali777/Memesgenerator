@@ -44,7 +44,7 @@ const Editpage = () => {
           Add Text
         </button>
         <button onClick={toggleEditMode} className="btn btn-primary">
-          {editMode ? "Close edit" : "Edit"}
+          {editMode ? "Close edit" : "Edit Text"}
         </button>
         <button
           onClick={() => {

@@ -6,7 +6,7 @@
   border-radius: 4px;
   padding: 8px;
   font-size: 16px;
-  width: 100%;
+  width: 180px;
   box-sizing: border-box; /* Ensure padding is included in width */
 }
 
@@ -22,6 +22,18 @@
 
 /* Add hover effect for the text */
 .draggable-container h5:hover {
-  color: #007bff; /* Change to any color you like */
+  color: #007bff;
+}
+.draggable-container {
+ width: 180px;
 }
 
+.resize-handler {
+  display: flex; /* Changed from "flex" to flex */
+  width: 15px;
+  height: 15px;
+  background-color: #ccc;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}

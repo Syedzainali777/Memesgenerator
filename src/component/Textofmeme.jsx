@@ -51,15 +51,6 @@ const Textofmeme = ({ editMode, onDelete }) => {
           <div
             className="resize-handle"
             onMouseDown={startResizing}
-            style={{
-              cursor: "nwse-resize",
-              width: "15px",
-              height: "15px",
-              backgroundColor: "#ccc",
-              position: "absolute",
-              bottom: 0,
-              right: 0,
-            }}
           />
         )}
         {editMode && (

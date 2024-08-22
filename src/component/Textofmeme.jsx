@@ -5,7 +5,7 @@ import "./Textofmeme.css";
 const Textofmeme = ({ editMode, onDelete }) => {
   const [edit, setEdit] = useState(false);
   const [val, setVal] = useState("Drag this Text to Desired position");
-  const [textSize, setTextSize] = useState(24); // Default font size
+  const [textSize, setTextSize] = useState(18); // Default font size
   const [isResizing, setIsResizing] = useState(false);
   const textRef = useRef(null);
 
@@ -29,12 +29,12 @@ const Textofmeme = ({ editMode, onDelete }) => {
   };
 
   return (
-    <Draggable disabled={editMode ? true : false}>
+    <Draggable disabled={editMode}>
       <div
         className="draggable-container"
         ref={textRef}
         style={{ fontSize: `${textSize}px`, position: "relative" }}
-        onMouseMove={isResizing ? handleMouseMove : null}
+        onMouseMove={handleMouseMove}
         onMouseUp={stopResizing}
         onMouseLeave={stopResizing}
       >
@@ -47,12 +47,7 @@ const Textofmeme = ({ editMode, onDelete }) => {
         ) : (
           <b style={{ fontSize: `${textSize}px`, cursor: `pointer` }}>{val}</b>
         )}
-        {edit && (
-          <div
-            className="resize-handle"
-            onMouseDown={startResizing}
-          />
-        )}
+        {edit && <div className="resize-handle" onMouseDown={startResizing} />}
         {editMode && (
           <button className="delete-button" onClick={onDelete}>
             ×

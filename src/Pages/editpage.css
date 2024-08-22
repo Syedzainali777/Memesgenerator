@@ -10,6 +10,7 @@
   height: auto; /* Maintain aspect ratio of the image container */
   position: relative; /* Ensure absolute positioning of child elements if needed */
   margin: 0 auto; /* Center the container horizontally */
+  max-height: 450px;
 }
 
 /* Responsive Image */
